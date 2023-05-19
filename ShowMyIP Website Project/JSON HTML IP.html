@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Load data about user from API Json request</title>
+      <style>
+          #datajson1{
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            text-align: center;
+            border: 5px solid;
+            border-color: black;
+            background-color: rgb(136, 136, 120);
+            padding: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+     </style>
+<script>
+  fetch('https://ipapi.co/json/')
+  .then(response => response.json())
+  .then(data => {
+  const text = `Twój adres IP: ${data.ip}<br><br>
+  Miasto: ${data.city}<br>
+  Kraj: ${data.country_name}<br>
+  CC: ${data.country}<br> 
+  Szerokość GEO: ${data.latitude}<br>
+  Długość GEO: ${data.longitude}<br> 
+  Kod pocztowy: ${data.postal}<br> 
+  ISP: ${data.org}<br>
+  Strefa czasowa: ${data.timezone}<br>`;
+  document.getElementById('dane').innerHTML = text;
+  });
+</script>
+  </head>
+
+  <body>
+        <h1 id="datajson1">
+          <div id="dane"></div>
+        <h1>
+  </body>
+</html>
+
+<!--
+//
+// *16.03.2022
+// Powered By Science_Wolf#6666
+// Magic Players©
+// All rights reserved
+// 2019-2022
+//
+-->
